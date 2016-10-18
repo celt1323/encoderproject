@@ -1,125 +1,59 @@
- $(document).keydown(function(e) {
-  if (e.keyCode == 65) {
-   var letters = $("#inputArea").val();
-   $("#textarea").append(letters);
- }
- if (e.keyCode == 66) {
-  var letters = $("#inputArea").val();
-  $("#textarea").append(letters);
- }
- if (e.keyCode == 67) {
-  var letters = $("#inputArea").val();
-  $("#textarea").append(letters);
- }
- if (e.keyCode == 68) {
-  var letters = $("#inputArea").val();
-  $("#textarea").append(letters);
- });
- if (e.keyCode == 69) {
-  var letters = $("#inputArea").val();
-  $("#textarea").append(letters);
- }
- if (e.keyCode == 70) {
-  var letters = $("#inputArea").val();
-  $("#textarea").append(letters);
- }
- if (e.keyCode == 71) {
-  var letters = $("#inputArea").val();
-  $("#textarea").append(letters);
- }
- if (e.keyCode == 72) {
-  var letters = $("#inputArea").val();
-  $("#textarea").append(letters);
- }
- if (e.keyCode == 73) {
-  var letters = $("#inputArea").val();
-  $("#textarea").append(letters);
- }
- if (e.keyCode == 74) {
-  var letters = $("#inputArea").val();
-  $("#textarea").append(letters);
- }
- if (e.keyCode == 75) {
-  var letters = $("#inputArea").val();
-  $("#textarea").append(letters);
- }
- if (e.keyCode == 76) {
-  var letters = $("#inputArea").val();
-  $("#textarea").append(letters);
- }
- if (e.keyCode == 77) {
-  var letters = $("#inputArea").val();
-  $("#textarea").append(letters);
- }
- if (e.keyCode == 78) {
-  var letters = $("#inputArea").val();
-  $("#textarea").append(letters);
- }
- if (e.keyCode == 79) {
-  var letters = $("#inputArea").val();
-  $("#textarea").append(letters);
+var letters = {
+65:'a',
+66:'b',
+67:'c',
+68:'d',
+69:'e',
+70:'f',
+71:'g',
+72:'h',
+73:'i',
+74:'j',
+75:'k',
+76:'l',
+77:'m',
+78:'n',
+79:'o',
+80:'p',
+81:'q',
+82:'r',
+83:'s',
+84:'t',
+85:'u',
+86:'v',
+87:'w',
+88:'x',
+89:'y',
+90:'z'
+}
+
+
+$('#inputArea').keydown(function(e) {
+
+
+
+
+
+  if ($("input:checked").val() == "echo"){
+ $("#textArea").append(letters[e.keyCode]);
+  }
+
+  else if ($("input:checked").val() == "caesarcipher"){
+
+   $("#textArea").append(letters[e.keyCode]);
+   letters[e.keyCode] - 1;
+  }
+
+  else if ($("input:checked").val() == "hieroglyphics"){
+    $('#textArea').append("images/hieroglyphics" + letters[e.keyCode] + ".gif");
  }
 
- if (e.keyCode == 80) {
-  var letters = $("#inputArea").val();
-  $("#textarea").append(letters);
- }
- if (e.keyCode == 81) {
-  var letters = $("#inputArea").val();
-  $("#textarea").append(letters);
- }
- if (e.keyCode == 82) {
-  var letters = $("#inputArea").val();
-  $("#textarea").append(letters);
- }
- if (e.keyCode == 83) {
-  var letters = $("#inputArea").val();
-  $("#textarea").append(letters);
- }
- if (e.keyCode == 84) {
-  var letters = $("#inputArea").val();
-  $("#textarea").append(letters);
- }
- if (e.keyCode == 85) {
-  var letters = $("#inputArea").val();
-  $("#textarea").append(letters);
- }
- if (e.keyCode == 86) {
-  var letters = $("#inputArea").val();
-  $("#textarea").append(letters);
- }
- if (e.keyCode == 87) {
-  var letters = $("#inputArea").val();
-  $("#textarea").append(letters);
- }
- if (e.keyCode == 88) {
-  var letters = $("#inputArea").val();
-  $("#textarea").append(letters);
- }
- if (e.keyCode == 89) {
-  var letters = $("#inputArea").val();
-  $("#textarea").append(letters);
- }
- if (e.keyCode == 90) {
-  var letters = $("#inputArea").val();
-  $("#textarea").append(letters);
- }
-  });
-
- $("input[type='radio']").click(function(){
-   $("input:checked").prop('checked',false);
-   $(this).prop('checked',true);
  });
 
- if ($("input:checked").val() == "echo"){
-   letters = $("#inputArea").val();
-   $("#textarea").append(letters);
- }
+// var messageToDecode = $("#inputArea").val();
+// var messageArray = messageToDecode.split("");
 
- if ($("input:checked").val() == "caesarcipher"){
-
- }
-
- if ($("input:checked").val() == "hieroglyphics"){
-
- }
+$("input[type='radio']").click(function(){
+  $("input:checked").prop('checked',false);
+  $(this).prop('checked',true);
+});
