@@ -1,4 +1,4 @@
-var letters = {
+var letters = { //object for letters
 65:'a',
 66:'b',
 67:'c',
@@ -27,33 +27,37 @@ var letters = {
 90:'z'
 }
 
+$("input[type='radio']").click(function(){
+  $("input:checked").prop('checked',false);
+  $(this).prop('checked',true);
+});
 
-$('#inputArea').keydown(function(e) {
 
+$('#inputArea').keydown(function(e) { //function when keydown
 
-
-
-
-  if ($("input:checked").val() == "echo"){
+   if ($("input:checked").val() == "echo"){ //when press echo
  $("#textArea").append(letters[e.keyCode]);
   }
 
-  else if ($("input:checked").val() == "caesarcipher"){
+  else if ($("input:checked").val() == "caesarcipher"){ //when press caesar cipher
 
-   $("#textArea").append(letters[e.keyCode]);
-   letters[e.keyCode] - 1;
+   $("#textArea").append(letters[e.keyCode - 1]);
   }
 
-  else if ($("input:checked").val() == "hieroglyphics"){
-    $('#textArea').append("images/hieroglyphics" + letters[e.keyCode] + ".gif");
+  else if ($("input:checked").val() == "heiroglyphics"){ //when press hieroglyphics
+    $('#textArea').append("<img src = 'images/heiroglyphics/" + letters[e.keyCode] + ".gif'>");
  }
 
  });
 
-// var messageToDecode = $("#inputArea").val();
-// var messageArray = messageToDecode.split("");
-
-$("input[type='radio']").click(function(){
-  $("input:checked").prop('checked',false);
-  $(this).prop('checked',true);
+ $("#translationInputText").keydown(function(e) {
+  if(e.keyCode == 13) {
+var messageToDecode = $('#translationInputText').val();
+var messageArray = messageToDecode.split("");
+messageArray = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+for (messageArray = 0; messageArray < 25; messageArray++){
+messageArray.charCodeAt(0) + 1;
+}
+//letter to number - charCodeAt(0)
+}
 });
