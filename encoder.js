@@ -50,14 +50,13 @@ $('#inputArea').keydown(function(e) { //function when keydown
 
  });
 
- $("#translationInputText").keydown(function(e) {
+ $("#translationInputText").keydown(function(e) {//to decode caesarcipher
   if(e.keyCode == 13) {
-var messageToDecode = $('#translationInputText').val();
-var messageArray = messageToDecode.split("");
-messageArray = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
-for (messageArray = 0; messageArray < 25; messageArray++){
-messageArray.charCodeAt(0) + 1;
+ var messageToDecode = $('#translationInputText').val();
+ var messageArray = messageToDecode.split("");
+ for (messageArray = 0; messageArray < 25; messageArray++){
+    var translateNumber = messageArray[i].charCodeAt(0) - 32 + 1;
+    $('#translationArea').append(letters[translateNumber]);
 }
-//letter to number - charCodeAt(0)
 }
 });
